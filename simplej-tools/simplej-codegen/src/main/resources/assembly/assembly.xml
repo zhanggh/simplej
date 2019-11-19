@@ -1,0 +1,56 @@
+<assembly xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/assembly-1.0.0.xsd">
+    <id>bin</id>
+    <!--这个id会出现在zip包名称的后面，zip的完整名是：pom.xml中的artifactId-version-id.zip -->
+    <formats> <!--支持的打包格式有zip、tar、tar.gz (or tgz)、tar.bz2 (or tbz2)、jar、dir、war-->
+        <format>zip</format>
+    </formats>
+
+    <includeBaseDirectory>true</includeBaseDirectory>
+    <fileSets>
+        <!-- 从目标目录拷贝文件去压缩 -->
+        <!-- 从源目录拷贝文件去压缩 -->
+        <fileSet>
+            <directory>src/main/bin</directory>
+            <includes>
+                <include>*.sh</include>
+                <include>*.cmd</include>
+                <include>*.bat</include>
+            </includes>
+            <outputDirectory>./bin</outputDirectory>
+        </fileSet>
+
+        <fileSet>
+            <directory>.</directory>
+            <includes>
+                <include>readme.md</include>
+            </includes>
+            <outputDirectory>.</outputDirectory>
+        </fileSet>
+
+        <fileSet>
+            <directory>./target</directory>
+            <includes>
+                <include>*.jar</include>
+            </includes>
+            <outputDirectory>.</outputDirectory>
+        </fileSet>
+
+        <fileSet>
+            <directory>static</directory>
+            <includes>
+                <include>*</include>
+            </includes>
+            <outputDirectory>./static</outputDirectory>
+        </fileSet>
+
+        <fileSet>
+            <directory>sql</directory>
+            <includes>
+                <include>*</include>
+            </includes>
+            <outputDirectory>./sql</outputDirectory>
+        </fileSet>
+
+    </fileSets>
+</assembly>

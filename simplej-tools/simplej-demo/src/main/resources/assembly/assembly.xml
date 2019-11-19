@@ -1,0 +1,55 @@
+<assembly xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/assembly-1.0.0.xsd">
+    <id>bin</id>
+    <!--这个id会出现在zip包名称的后面，zip的完整名是：pom.xml中的artifactId-version-id.zip -->
+    <formats> <!--支持的打包格式有zip、tar、tar.gz (or tgz)、tar.bz2 (or tbz2)、jar、dir、war-->
+        <format>zip</format>
+    </formats>
+    <dependencySets>
+        <!-- 用来定制工程依赖 jar 包的打包方式,依赖包的输出路径 -->
+        <dependencySet>
+            <outputDirectory>lib</outputDirectory>
+            <!--依赖jar包的输出目录-->
+            <useProjectArtifact>false</useProjectArtifact>
+            <scope>runtime</scope>
+            <includes> <!--指定把哪些依赖包放进去  -->
+                <!--如果不指定  则所有的依赖都会打入，但是有的时候  我们只需要打特定依赖的包-->
+                <!--<include>net.sf.jsi:jsi</include> -->
+            </includes>
+        </dependencySet>
+    </dependencySets>
+    <includeBaseDirectory>true</includeBaseDirectory>
+    <fileSets>
+        <!-- 从目标目录拷贝文件去压缩 -->
+        <!-- 从源目录拷贝文件去压缩 -->
+        <fileSet>
+            <directory>src/main/bin</directory>
+            <includes>
+                <include>*.sh</include>
+                <include>*.cmd</include>
+            </includes>
+            <outputDirectory>./bin</outputDirectory>
+        </fileSet>
+        <fileSet>
+            <directory>src/main/script</directory>
+            <includes>
+                <include>*</include>
+            </includes>
+            <outputDirectory>./script</outputDirectory>
+        </fileSet>
+        <fileSet>
+            <directory>.</directory>
+            <includes>
+                <include>readme.md</include>
+            </includes>
+            <outputDirectory>.</outputDirectory>
+        </fileSet>
+        <fileSet>
+            <directory>target/</directory>
+            <includes>
+                <include>*.jar</include>
+            </includes>
+            <outputDirectory>applib/</outputDirectory>
+        </fileSet>
+    </fileSets>
+</assembly>

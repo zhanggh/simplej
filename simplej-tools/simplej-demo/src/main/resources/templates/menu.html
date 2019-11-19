@@ -1,0 +1,29 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+
+</head>
+
+<body>
+<!--_menu 作为公共模版分离出去-->
+<aside th:fragment="htmlmenu" class="Hui-admin-aside-wrapper">
+    <div class="Hui-admin-logo-wrapper">
+        <a class="logo navbar-logo" href="/aboutHui.shtml">
+            <i class="va-m iconpic global-logo"></i>
+            <span class="va-m">H-ui.admin</span>
+        </a>
+    </div>
+    <div class="Hui-admin-menu-dropdown bk_2">
+        <dl id="menu-article" class="Hui-menu" th:each="menu,menuStat : ${menus}" th:if="${not #maps.isEmpty(menus)}">
+            <dt class="Hui-menu-title"><i class="Hui-iconfont">&#xe616;</i><span th:text="${menu.value.menuName}"></span><i
+                    class="Hui-iconfont Hui-admin-menu-dropdown-arrow">&#xe6d5;</i></dt>
+            <dd class="Hui-menu-item">
+                <ul>
+                    <li th:each="child:${menu.value.childs}"><a th:href="child.menuUri" th:title="${child.menuName}"><span th:text="${child.menuName}"></span></a></li>
+                    </li>
+                </ul>
+            </dd>
+        </dl>
+    </div>
+</aside>
+</body>
+</html>

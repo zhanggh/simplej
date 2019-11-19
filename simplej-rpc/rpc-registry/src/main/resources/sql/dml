@@ -1,0 +1,92 @@
+use rpc_register;
+
+
+CREATE TABLE `config_item` (
+  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT COMMENT '自增主键',
+  `namespace` varchar(128) NOT NULL DEFAULT '' COMMENT '所属的命名空间',
+  `item_name` varchar(128) NOT NULL DEFAULT '' COMMENT '属性名',
+  `item_value` varchar(1024) NOT NULL DEFAULT '' COMMENT '属性值',
+  `item_type` varchar(1) NOT NULL DEFAULT '1' COMMENT '1-普通属性项，2-配置文件',
+  `reserved1` varchar(512) NOT NULL DEFAULT '' COMMENT '保留字段',
+  `create_time` timestamp(3) NOT NULL DEFAULT '1970-01-02 00:00:00.000' COMMENT '创建时间',
+  `created_by` varchar(30) NOT NULL DEFAULT '' COMMENT '创建人',
+  `updated_by` varchar(30) NOT NULL DEFAULT '' COMMENT '更新人',
+  `update_time` timestamp(3) NOT NULL DEFAULT CURRENT_TIMESTAMP(3) ON UPDATE CURRENT_TIMESTAMP(3) COMMENT '更新时间',
+  `is_deleted` tinyint(3) unsigned NOT NULL DEFAULT '0' COMMENT '软删除标志: 0:正常，1：已删除',
+  `item_version` int(11) unsigned NOT NULL DEFAULT '0' COMMENT '属性版本号',
+  `description` varchar(255) NOT NULL DEFAULT '' COMMENT '属性描述',
+  `status` int(11) unsigned NOT NULL DEFAULT '0' COMMENT '属性状态',
+  `effective_time` timestamp(3) NOT NULL DEFAULT '1970-01-02 00:00:00.000' COMMENT '生效时间',
+  `expire_time` timestamp(3) NOT NULL DEFAULT '2038-01-02 00:00:00.000' COMMENT '失效时间',
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `idx_namespace_item_name` (`namespace`,`item_name`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='属性配置信息';
+
+CREATE TABLE `config_item_history` (
+  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT COMMENT '自增主键',
+  `org_id` bigint(20) unsigned NOT NULL DEFAULT '0' COMMENT '原记录主键',
+  `namespace` varchar(128) NOT NULL DEFAULT '' COMMENT '所属的命名空间',
+  `item_name` varchar(128) NOT NULL DEFAULT '' COMMENT '属性名',
+  `item_value` varchar(1024) NOT NULL DEFAULT '' COMMENT '属性值',
+  `item_type` varchar(1) NOT NULL DEFAULT '1' COMMENT '1-普通属性项，2-配置文件',
+  `reserved1` varchar(512) NOT NULL DEFAULT '' COMMENT '保留字段',
+  `create_time` timestamp(3) NOT NULL DEFAULT '1970-01-02 00:00:00.000' COMMENT '创建时间',
+  `created_by` varchar(30) NOT NULL DEFAULT '' COMMENT '创建人',
+  `updated_by` varchar(30) NOT NULL DEFAULT '' COMMENT '更新人',
+  `update_time` timestamp(3) NOT NULL DEFAULT CURRENT_TIMESTAMP(3) ON UPDATE CURRENT_TIMESTAMP(3) COMMENT '更新时间',
+  `is_deleted` tinyint(3) unsigned NOT NULL DEFAULT '0' COMMENT '软删除标志: 0:正常，1：已删除',
+  `item_version` int(11) unsigned NOT NULL DEFAULT '0' COMMENT '属性版本号',
+  `description` varchar(255) NOT NULL DEFAULT '' COMMENT '属性描述',
+  `status` int(11) unsigned NOT NULL DEFAULT '0' COMMENT '属性状态',
+  `effective_time` timestamp(3) NOT NULL DEFAULT '1970-01-02 00:00:00.000' COMMENT '生效时间',
+  `expire_time` timestamp(3) NOT NULL DEFAULT '2038-01-02 00:00:00.000' COMMENT '失效时间',
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `idx_namespace_item_name` (`namespace`,`item_name`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='属性配置信息日志';
+
+
+
+CREATE TABLE `config_file` (
+  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT COMMENT '自增主键',
+  `namespace` varchar(128) NOT NULL DEFAULT '' COMMENT '所属的命名空间',
+  `file_name` varchar(128) NOT NULL DEFAULT '' COMMENT '文件名',
+  `file_context` varchar(1024) NOT NULL DEFAULT '' COMMENT '文件内容',
+  `file_type` varchar(1) NOT NULL DEFAULT '1' COMMENT 'xml/propertie/yml',
+  `reserved1` varchar(512) NOT NULL DEFAULT '' COMMENT '保留字段',
+  `create_time` timestamp(3) NOT NULL DEFAULT '1970-01-02 00:00:00.000' COMMENT '创建时间',
+  `created_by` varchar(30) NOT NULL DEFAULT '' COMMENT '创建人',
+  `updated_by` varchar(30) NOT NULL DEFAULT '' COMMENT '更新人',
+  `update_time` timestamp(3) NOT NULL DEFAULT CURRENT_TIMESTAMP(3) ON UPDATE CURRENT_TIMESTAMP(3) COMMENT '更新时间',
+  `is_deleted` tinyint(3) unsigned NOT NULL DEFAULT '0' COMMENT '软删除标志: 0:正常，1：已删除',
+  `file_version` int(11) unsigned NOT NULL DEFAULT '0' COMMENT '属性版本号',
+  `description` varchar(255) NOT NULL DEFAULT '' COMMENT '属性描述',
+  `status` int(11) unsigned NOT NULL DEFAULT '0' COMMENT '属性状态',
+  `effective_time` timestamp(3) NOT NULL DEFAULT '1970-01-02 00:00:00.000' COMMENT '生效时间',
+  `expire_time` timestamp(3) NOT NULL DEFAULT '2038-01-02 00:00:00.000' COMMENT '失效时间',
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `idx_namespace_file_name` (`namespace`,`file_name`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='属性文件信息';
+
+
+
+CREATE TABLE `config_file_history` (
+  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT COMMENT '自增主键',
+  `org_id` bigint(20) unsigned NOT NULL DEFAULT '0' COMMENT '原记录主键',
+  `namespace` varchar(128) NOT NULL DEFAULT '' COMMENT '所属的命名空间',
+  `file_name` varchar(128) NOT NULL DEFAULT '' COMMENT '文件名',
+  `file_context` varchar(1024) NOT NULL DEFAULT '' COMMENT '文件内容',
+  `file_type` varchar(1) NOT NULL DEFAULT '1' COMMENT 'xml/propertie/yml',
+  `reserved1` varchar(512) NOT NULL DEFAULT '' COMMENT '保留字段',
+  `create_time` timestamp(3) NOT NULL DEFAULT '1970-01-02 00:00:00.000' COMMENT '创建时间',
+  `created_by` varchar(30) NOT NULL DEFAULT '' COMMENT '创建人',
+  `updated_by` varchar(30) NOT NULL DEFAULT '' COMMENT '更新人',
+  `update_time` timestamp(3) NOT NULL DEFAULT CURRENT_TIMESTAMP(3) ON UPDATE CURRENT_TIMESTAMP(3) COMMENT '更新时间',
+  `is_deleted` tinyint(3) unsigned NOT NULL DEFAULT '0' COMMENT '软删除标志: 0:正常，1：已删除',
+  `file_version` int(11) unsigned NOT NULL DEFAULT '0' COMMENT '属性版本号',
+  `description` varchar(255) NOT NULL DEFAULT '' COMMENT '属性描述',
+  `status` int(11) unsigned NOT NULL DEFAULT '0' COMMENT '属性状态',
+  `effective_time` timestamp(3) NOT NULL DEFAULT '1970-01-02 00:00:00.000' COMMENT '生效时间',
+  `expire_time` timestamp(3) NOT NULL DEFAULT '2038-01-02 00:00:00.000' COMMENT '失效时间',
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `idx_namespace_file_name` (`namespace`,`file_name`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='属性文件信息修改记录日志';

@@ -1,0 +1,342 @@
+<!--_meta 作为公共模版分离出去-->
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no"/>
+    <meta http-equiv="Cache-Control" content="no-siteapp"/>
+    <link rel="Bookmark" href="favicon.ico">
+    <link rel="Shortcut Icon" href="favicon.ico"/>
+    <!--[if lt IE 9]>
+    <script type="text/javascript" src="lib/html5.js"></script>
+    <script type="text/javascript" src="lib/respond.min.js"></script>
+    <![endif]-->
+    <link rel="stylesheet" type="text/css" href="lib/h-ui/css/H-ui.min.css"/>
+    <link rel="stylesheet" type="text/css" href="lib/Hui-iconfont/1.0.9/iconfont.css"/>
+    <link rel="stylesheet" type="text/css" href="lib/business/css/style.css"/>
+    <!--[if IE 6]>
+    <script type="text/javascript" src="http://lib.h-ui.net/DD_belatedPNG_0.0.8a-min.js"></script>
+    <script>DD_belatedPNG.fix('*');</script><![endif]-->
+    <!--/meta 作为公共模版分离出去-->
+    <script type="application/javascript">
+        function add_project(obj, id) {
+            layer.confirm('确认要提交？', function (index) {
+                layer.msg('已提交!', {icon: 1, time: 2000});
+            });
+        }
+
+    </script>
+    <style type="text/css">
+        input{
+            width: 66%;
+        }
+    </style>
+
+    <title>新增项目</title>
+</head>
+<body style="background-color:#fff">
+<h1 style="text-align: center">spring-boot模板项目生成器</h1>
+<div class="wap-container">
+    <form action="/project/create" method="post" class="form form-horizontal" id="form-project-add">
+        <div class="panel">
+            <div class="panel-body" id="panel-body_001">
+                <div class="row clearfix">
+                    <label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>是否需要访问数据库：</label>
+                    <div class="form-controls col-xs-8 col-sm-9 skin-minimal" id="db-radio-box">
+                        <div class="radio-box">
+                            <input name="useDbFlag" type="radio" class="c-db-radio-box" id="useDbFlag-1"
+                                   value="1" checked>
+                            <label for="useDbFlag-1">是</label>
+                        </div>
+                        <div class="radio-box">
+                            <input type="radio" id="useDbFlag-2"  class="c-db-radio-box" name="useDbFlag"
+                                   value="0">
+                            <label for="useDbFlag-2">否</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row clearfix">
+                    <label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>是否集成RPC框架：</label>
+                    <div class="form-controls col-xs-8 col-sm-9 skin-minimal">
+                        <div class="radio-box">
+                            <input name="useRpcFlag" type="radio" class="use-rpc-framework" id="useRpc-1"
+                                   value="1" checked>
+                            <label for="useRpc-1">是</label>
+                        </div>
+                        <div class="radio-box">
+                            <input type="radio" id="useRpc-2"  class="use-rpc-framework" name="useRpcFlag"
+                                   value="0">
+                            <label for="useRpc-2">否</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row clearfix">
+                    <label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>项目名：</label>
+                    <div class="form-controls col-xs-8 col-sm-9">
+                        <input type="text" class="input-text" style="width: 66%;" value="" placeholder="artifactId" id="artifactId"
+                               name="artifactId">
+                    </div>
+                </div>
+                <div class="row clearfix">
+                    <label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>groupId：</label>
+                    <div class="form-controls col-xs-8 col-sm-9">
+                        <input type="text" class="input-text" value="" style="width: 66%;"  placeholder="groupId" id="groupId"
+                               name="groupId">
+                    </div>
+                </div>
+                <div class="row clearfix">
+                    <label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>basePackage：</label>
+                    <div class="form-controls col-xs-8 col-sm-9">
+                        <input type="text" class="input-text" value="" style="width: 66%;"  placeholder="basePackage,as:com.haven.simplej"
+                               id="basePackage" name="basePackage">
+                    </div>
+                </div>
+                <div class="row clearfix">
+                    <label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>businessName：</label>
+                    <div class="form-controls col-xs-8 col-sm-9">
+                        <input type="text" class="input-text" value="" style="width: 66%;"  placeholder="basePackage,as:payment"
+                               id="businessName" name="businessName">
+                    </div>
+                </div>
+                <div class="row clearfix">
+                    <label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>工程类型：</label>
+                    <div class="form-controls col-xs-8 col-sm-9 skin-minimal">
+                        <div class="radio-box">
+                            <input name="projectType" type="radio" id="projectType-1" class="c-pj-radio-box" value="webApp" checked>
+                            <label for="projectType-1">web工程</label>
+                        </div>
+                        <div class="radio-box">
+                            <input type="radio" id="projectType-2" name="projectType" class="c-pj-radio-box"
+                                   value="simpleApp">
+                            <label for="projectType-2">普通app</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="row clearfix" id="panel-body_003">
+                    <label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>是否需要生成管理端界面：</label>
+                    <div class="form-controls col-xs-8 col-sm-9 skin-minimal">
+                        <div class="radio-box">
+                            <input name="needAdminTemplate" type="radio" id="needAdminTemplate-1" value="1" checked>
+                            <label for="needAdminTemplate-1">是</label>
+                        </div>
+                        <div class="radio-box">
+                            <input type="radio" id="needAdminTemplate-2" name="needAdminTemplate" value="0">
+                            <label for="needAdminTemplate-2">否</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row clearfix">
+                    <label class="form-label col-xs-4 col-sm-3">项目描述：</label>
+                    <div class="form-controls col-xs-8 col-sm-9">
+                        <textarea name="projectDesc" cols="" rows=""  style="width: 66%;height: 70px;" class="textarea"
+                                  placeholder="项目描述"
+                                  dragonfly="true"></textarea>
+                        <p class="textarea-numberbar"><em class="textarea-length">0</em>/1000</p>
+                    </div>
+                </div>
+
+            </div>
+            <div class="panel-body" id="panel-body_002">
+                <div class="row clearfix">
+                    <label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>数据库host：</label>
+                    <div class="form-controls col-xs-8 col-sm-9">
+                        <input type="text" class="input-text" value="127.0.0.1"  style="width: 66%;" placeholder="" id="dbHost"
+                               name="dbHost">
+                    </div>
+                </div>
+                <div class="row clearfix">
+                    <label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>数据库port：</label>
+                    <div class="form-controls col-xs-8 col-sm-9">
+                        <input type="text" class="input-text" value="3306"  style="width: 66%;" placeholder="" id="port"
+                               name="port">
+                    </div>
+                </div>
+                <div class="row clearfix">
+                    <label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>数据库user：</label>
+                    <div class="form-controls col-xs-8 col-sm-9">
+                        <input type="text" class="input-text" value="root"  style="width: 66%;" placeholder="" id="userName"
+                               name="userName">
+                    </div>
+                </div>
+                <div class="row clearfix">
+                    <label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>数据库密码：</label>
+                    <div class="form-controls col-xs-8 col-sm-9">
+                        <input type="password" class="input-text" autocomplete="off"  style="width: 66%;"  value="" placeholder="密码"
+                               id="password" name="password">
+                    </div>
+                </div>
+
+                <div class="row clearfix">
+                    <label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>dao类型：</label>
+                    <div class="form-controls col-xs-8 col-sm-9 skin-minimal">
+                        <div class="radio-box">
+                            <input name="daoType" type="radio" id="daoType-1" value="mybatis" checked>
+                            <label for="daoType-1">mybatis</label>
+                        </div>
+                        <div class="radio-box">
+                            <input type="radio" id="daoType-2" name="daoType" value="commonDao">
+                            <label for="daoType-2">jdbcTemplate</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row clearfix">
+                    <label class="form-label col-xs-4 col-sm-3">数据库表：</label>
+                    <div class="form-controls col-xs-8 col-sm-9">
+                        <textarea name="tables" cols="" rows="" class="textarea" style="width: 66%;height: 70px;"
+                                  placeholder="例如：rule_engine.app_info,rule_engine.business，格式：库名.表名,多个以英文逗号分隔"
+                                  dragonfly="true"></textarea>
+                        <p class="textarea-numberbar"><em class="textarea-length">0</em>/1000</p>
+                    </div>
+                </div>
+
+            </div>
+            <div class="panel-body">
+                <div class="row clearfix">
+                    <div class="col-xs-8 col-sm-9 col-xs-offset-4 col-sm-offset-3">
+                        <input class="btn btn-primary radius" type="submit" value="&nbsp;&nbsp;提交&nbsp;&nbsp;">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+<!--_footer 作为公共模版分离出去-->
+<script type="text/javascript" src="lib/jquery/1.9.1/jquery.min.js"></script>
+<script type="text/javascript" src="lib/layer/3.1.1/layer.js"></script>
+<script type="text/javascript" src="lib/h-ui/js/H-ui.min.js"></script>
+
+<!--/_footer /作为公共模版分离出去-->
+
+<!--请在下方写此页面业务相关的脚本-->
+<script type="text/javascript" src="lib/jquery.validation/1.14.0/jquery.validate.js"></script>
+<script type="text/javascript" src="lib/jquery.validation/1.14.0/validate-methods.js"></script>
+<script type="text/javascript" src="lib/jquery.validation/1.14.0/messages_zh.js"></script>
+<script type="text/javascript">
+    $(function () {
+        //方法名称：获取当前选中的值；icheck-radio change事件；点击事件;
+        $(".c-db-radio-box").on('ifChecked', function(event){
+            // alert($(this).val());
+            if("0"==$(this).val()){
+                $("#panel-body_002").hide();
+            }else  if("1"==$(this).val()){
+                $("#panel-body_002").show();
+            }
+        });
+        $(".c-pj-radio-box").on('ifChecked', function(event){
+            // alert($(this).val());
+            if("webApp"==$(this).val()){
+                $("#panel-body_003").show();
+            }else {
+                $("#panel-body_003").hide();
+            }
+        });
+        $("input").css("width","668px;");
+        /* 通过iCheck插件，美化checkbox */
+        $('.skin-minimal input').iCheck({
+            checkboxClass: 'icheckbox-blue',
+            radioClass: 'iradio-blue',
+            increaseArea: '20%'
+        });
+
+        /* 表单验证，提交 */
+        $("#form-project-add").validate({
+            rules: {
+
+                password: {
+                    required: true,
+                },
+                dbHost: {
+                    required: true,
+                },
+                port: {
+                    required: true,
+                },
+                projectType: {
+                    required: true,
+                },
+                daoType: {
+                    required: true,
+                },
+                artifactId: {
+                    required: true,
+                },
+                groupId: {
+                    required: true,
+                },
+                userName: {
+                    required: true,
+                },
+                basePackage: {
+                    required: true,
+                },
+                businessName: {
+                    required: true,
+                },
+                tables: {
+                    required: true,
+                    maxlength: 1000,
+                }
+            },
+            onkeyup: false,
+            focusCleanup: true,
+            success: "valid",
+            submitHandler: function (form) {
+                layer.msg("process........", {icon: 1, time: 5000});
+                var projectType = $('input:radio[name="projectType"]:checked').val();
+                // layer.msg(projectName === "simpleApp", {icon: 1, time: 5000})
+                $(form).ajaxSubmit({
+                    type: 'post', // 提交方式 get/post
+                    // url: 'your url', // 需要提交的 url
+                    success: function (data) { // data 保存提交后返回的数据，一般为 json 数据
+                        // 此处可对 data 作相关处理
+                        var projectName = $("#artifactId").val();
+                        if (data.respCode === "0" || data.respCode === "success") {
+                            layer.msg("create project template success", {icon: 1, time: 2000});
+                            window.open("/project/download?projectName=" + projectName);
+                        } else {
+                            layer.msg("create project template fail,error reason is " + data.respMsg, {
+                                icon: 1,
+                                time: 3000
+                            });
+                        }
+                    }
+                });
+
+                //
+            }
+        });
+    });
+</script>
+<!--/请在上方写此页面业务相关的脚本-->
+<br>
+<br>
+<br>
+<div style="width: 70%;font-size: 20px;margin: 0 auto;padding: 50px;background-color: #F4F4F4;border: silver 3px
+dashed;">
+    说明：<br>
+    1.该模板生成器生成的工程属于标准maven工程<br>
+    2.生成的工程是基于spring boot框架的基础工程<br>
+    3.工程类型分为web和普通app工程，其中app工程是指非web工程<br>
+    4.是否使用数据库是指工程是否需要访问数据库，如果选择“是”，配置好数据库表，生成器则根据指定的表反向生成相关的controller、service、domain等基础类<br>
+    5.是否集成rpc框架是指simplej-rpc框架，一个提供服务治理能力的微服务框架<br>
+    6.生成的模板工程，支持分表分库操作，不需要特殊配置，在相应的service类或者方法上直接使用@DBShardingStrategy和@TableShardingStrategy即可<br>
+
+
+    <br><h4>
+    更多指引请看<a href="codegen-guide.html" target="_blank" style="color: #201bd9;">《使用手册》</a></h4>
+
+</div>
+<br>
+<br>
+<br><br>
+<br>
+<br>
+</body>
+</html>

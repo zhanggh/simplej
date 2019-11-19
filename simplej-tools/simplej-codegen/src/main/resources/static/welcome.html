@@ -1,0 +1,274 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <!--[if lt IE 9]>
+    <script type="text/javascript" src="lib/html5shiv.js"></script>
+    <script type="text/javascript" src="lib/respond.min.js"></script>
+    <![endif]-->
+    <link rel="stylesheet" type="text/css" href="lib/h-ui/css/H-ui.min.css" />
+    <link rel="stylesheet" type="text/css" href="lib/Hui-iconfont/1.0.9/iconfont.css" />
+    <link rel="stylesheet" type="text/css" href="lib/business/css/style.css" />
+    <!--[if IE 6]>
+    <script type="text/javascript" src="lib/DD_belatedPNG_0.0.8a-min.js" ></script>
+    <script>DD_belatedPNG.fix('*');</script>
+    <![endif]-->
+    <title>首页</title>
+</head>
+<body>
+<div class="wap-container">
+    <article class="Hui-admin-content clearfix">
+        <div class="row-24 clearfix" style="margin-left: -12px; margin-right: -12px;"></div>
+        <div class="panel">
+            <div class="panel-body">
+                <p class="f-20 text-success">欢迎使用simplej
+                    <span class="f-14">v1.0</span>
+                    通用后台开发框架！
+                </p>
+                <p>simplej包含3大部分：</p>
+                <p>1.基础通用工具组件，如：simplej-base、simplej-db</p>
+                <p>2.基础通用系统，如：simplej-authen、simplej-security-manage、simplej-rule-engine</p>
+                <p>3.一套简单的支付平台案例/p>
+                <p id="time"></p>
+                <p>作者：havenzhang</p>
+                <table class="table table-border table-bordered table-bg mt-20">
+                    <thead>
+                    <tr>
+                        <th scope="col">基础组件</th>
+                        <th scope="col">功能</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <th width="20%">simplej-base</th>
+                        <td><span id="lbServerName">通用工具包，提供常见的http客户端工具，限流器，缓存工具，文件处理，字符串处理，日期处理，xml
+                            序列化，序列号生成器，加解密签名验签，groovy工具等，更多使用案例见：<a href="welcome.html" target="_blank" style="color:
+                            #0000cc" >simplej
+                                -base使用手册</a> </span></td>
+                    </tr>
+                    <tr>
+                        <th>simplej-db</th>
+                        <td>数据库orm工具包，提供便捷的orm工具，支持读写分离，分表分库，多数据源管理，更多使用案例见：<a href="welcome.html" target="_blank" style="color: #0000cc" >simplej
+                            -db使用手册</a> </td>
+                    </tr>
+                    <tr>
+                        <th>simplej-transaction-manager</th>
+                        <td>分布式事务管理器sdk，更多使用案例见：<a href="welcome.html" target="_blank" style="color: #0000cc" >simplej
+                            -transaction-manager使用手册</a> </td>
+                    </tr>
+                    <tr>
+                        <th>simplej-web</th>
+                        <td>基于spring boot的通用web组件，引入该组件可以快速实现过滤器和拦截器，更多使用案例见：<a href="welcome.html" target="_blank" style="color: #0000cc" >simplej
+                            -web使用手册</a> </td>
+                    </tr>
+
+                    <tr>
+                        <th>simplej-codegen</th>
+                        <td>基础模板工程代码生成器，可以快速生成基于spring boot的web工程，app工程，集成rpc框架的工程等，更多使用案例见：<a href="welcome.html"
+                                                                                     target="_blank" style="color: #0000cc">simplej-codegen使用手册</a></td>
+                    </tr>
+                    </tbody>
+                </table>
+
+
+                <table class="table table-border table-bordered table-bg mt-20">
+                    <thead>
+                    <tr>
+                        <th scope="col">通用系统</th>
+                        <th scope="col">功能</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <th width="20%">simplej-authen</th>
+                        <td>一个通用的登录认证和权限控制组件，更多使用案例见：<a href="welcome.html" target="_blank" style="color: #0000cc"
+                        >simplej-authen使用手册</a> </td>
+                    </tr>
+
+                    <tr>
+                        <th>simplej-rule-engine</th>
+                        <td>规则引擎，更多使用案例见：<a href="welcome.html" target="_blank" style="color: #0000cc">simplej-rule-engine
+                            使用手册</a></td>
+                    </tr>
+                    <tr>
+                        <th>simplej-security-manage</th>
+                        <td>安全管理平台，提供加解密，签名验签，app入驻，颁发秘钥，颁发证书等基础功能，更多使用案例见：<a href="welcome.html" target="_blank"
+                                                                              style="color: #0000cc">simplej-security-manage使用手册</a></td>
+                    </tr>
+                    </tbody>
+                </table>
+
+
+                <table class="table table-border table-bordered table-bg mt-20">
+                    <thead>
+                    <tr>
+                        <th scope="col">rpc框架组件</th>
+                        <th scope="col">功能</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <th width="20%">rpc-basic</th>
+                        <td>rpc框架的公共基础组件，不管是rpc-client,还是rpc-server都依赖该组件</td>
+                    </tr>
+                    <tr>
+                        <th>rpc-client</th>
+                        <td>rpc框架的java客户端sdk，客户端应用可以通过该sdk方便地访问服务端服务，更多使用案例见：<a href="welcome.html" target="_blank"
+                                                                                style="color: #0000cc">rpc-client使用手册</a></td>
+                    </tr>
+                    <tr>
+                        <th>rpc-server</th>
+                        <td>rpc框架的java服务端sdk，该组件提供服务注册，心跳上报，服务慢启动，优雅停启服务等能力，更多使用案例见：<a href="welcome.html" target="_blank"
+                                                                                       style="color: #0000cc">rpc-server使用手册</a></td>
+                    </tr>
+                    <tr>
+                        <th>rpc-proxy</th>
+                        <td>rpc框架提供的代理服务，每个应用节点上都需要部署一个proxy，访问链路：【客户端应用A --> 本地proxy】 --> 【本地proxy--> 服务端应用B】，更多使用案例见：<a href="welcome.html" target="_blank"
+                                                                                                                          style="color: #0000cc">rpc-server使用手册</a></td>
+                    </tr>
+                    <tr>
+                        <th>rpc-registry</th>
+                        <td>rpc框架的服务注册中心，提供服务注册，服务发现，服务心跳管理，等相关服务管理的基础功能，更多使用案例见：<a href="welcome.html" target="_blank"
+                                                                                              style="color: #0000cc">rpc-registry使用手册</a></td>
+                    </tr>
+                    <tr>
+                        <th>rpc-center</th>
+                        <td>rpc框架的服务治理中心，流量监听，流量统计，流量分析，流量控制，流量分配，熔断管理，健康检查，链路跟踪等相关服务治理的一系列功能，更多使用案例见：<a href="welcome.html" target="_blank"
+                                                                                              style="color: #0000cc">rpc-center使用手册</a></td>
+                    </tr>
+                    <tr>
+                        <th>rpc-admin</th>
+                        <td>rpc框架的服务治理管理平台,提供服务路由管理，配置管理，访问权限管理，更多使用案例见：<a href="welcome.html" target="_blank"
+                                                                           style="color: #0000cc">rpc-admin使用手册</a></td>
+                    </tr>
+                    <tr>
+                        <th>rpc-config</th>
+                        <td>配置中心服务，提供配置监听，以及配置的增删改查维护等接口服务，rpc-server实时监听配置中心的配置变化，更多使用案例见：<a href="welcome.html" target="_blank"
+                                                                           style="color: #0000cc">rpc-config使用手册</a></td>
+                    </tr>
+                    <tr>
+                        <th>rpc-auth</th>
+                        <td>rpc服务间通讯权限控制服务，提供服务权限监听，权限分配、管理等基础功能，更多使用案例见：<a href="welcome.html" target="_blank"
+                                                                           style="color: #0000cc">rpc-auth使用手册</a></td>
+                    </tr>
+                    <tr>
+                        <th>rpc-docgen</th>
+                        <td>rpc接口定义文档生成器，根据定义好的rpc服务接口，自动生成接口文档，更多使用案例见：<a href="welcome.html" target="_blank"
+                                                                           style="color: #0000cc">rpc-docgen使用手册</a></td>
+                    </tr>
+                    <tr>
+                        <th>rpc-demo</th>
+                        <td>simplej相关组件的使用demo，可直接部署体验</td>
+                    </tr>
+                    </tbody>
+                </table>
+
+
+                <table class="table table-border table-bordered table-bg mt-20">
+                    <thead>
+                    <tr>
+                        <th scope="col">第三方支付平台服务</th>
+                        <th scope="col">功能</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <th width="20%">mch-gateway</th>
+                        <td>支付网关服务，提供TO B业务的支付相关服务，如:统一下单、绑卡、发短信、解绑、快捷支付、支付结果查询、
+                            退款、退款结果查询、代扣、代扣结果查询、代付、代付结果查询、实名验证、下载对账单等服务，
+                            更多使用案例见：<a href="welcome.html" target="_blank"  style="color: #0000cc">mch-gateway使用手册</a></td>
+                    </tr>
+                    <tr>
+                        <th>payment-business</th>
+                        <td>支付应用子系统，由于仅实现了一些较为简单标准的支付功能，故中间层只设计了一个统一的支付应用服务，
+                            在业务较为丰富复杂的场景下，支付应用中间层实际上是可以划分成多个不同领域的子服务系统，更多使用案例见：<a
+                                href="welcome.html" target="_blank" style="color: #0000cc">payment-business使用手册</a></td>
+                    </tr>
+                    <tr>
+                        <th>payment-admin</th>
+                        <td>支付运营管理平台，提供常规的商户管理、产品管理、计费管理、交易管理、结算管理、协议管理、账户管理等基础功能，
+                            更多使用案例见：<a href="welcome.html" target="_blank" style="color: #0000cc">payment-admin 使用手册</a></td>
+                    </tr>
+                    <tr>
+                        <th>payment-userinfo</th>
+                        <td>支付平台商户&用户服务，提供基础的商户&用户入户查询修改等基础功能，
+                            更多使用案例见：<a href="welcome.html" target="_blank" style="color: #0000cc">payment-userinfo
+                                使用手册</a></td>
+                    </tr>
+                    <tr>
+                        <th>payment-accounting</th>
+                        <td>支付平台账户系统（包含账户&科目），更多使用案例见：<a href="welcome.html" target="_blank"
+                                                                                              style="color: #0000cc">payment-accounting使用手册</a></td>
+                    </tr>
+                    <tr>
+                        <th>payment-settlement</th>
+                        <td>支付平台结算管理服务，更多使用案例见：<a href="welcome.html" target="_blank"
+                                                                           style="color: #0000cc">payment-settlement使用手册</a></td>
+                    </tr>
+                    <tr>
+                        <th>payment-engine</th>
+                        <td>支付平台核心引擎，上游来着payment-business，下游去payment-channel，
+                            更多使用案例见：<a href="welcome.html" target="_blank" style="color: #0000cc">payment-engine
+                                使用手册</a></td>
+                    </tr>
+                    <tr>
+                        <th>payment-risk</th>
+                        <td>支付平台风控系统，提供事前事中事后3个阶段的风险控制能力，
+                            更多使用案例见：<a href="welcome.html" target="_blank" style="color: #0000cc">payment-risk
+                                使用手册</a></td>
+                    </tr>
+                    <tr>
+                        <th>payment-channel</th>
+                        <td>支付平台统一渠道网关系统，负责对接外部渠道，包括银行，短信运营商，营销平台等，
+                            更多使用案例见：<a href="welcome.html" target="_blank" style="color: #0000cc">payment-risk
+                                使用手册</a></td>
+                    </tr>
+                    <tr>
+                        <th>payment-agreement</th>
+                        <td>支付平台商户&用户协议管理子系统，所有商户&用户相关的签约/绑卡协议信息都由该系统统一登记管理，
+                            更多使用案例见：<a href="welcome.html" target="_blank" style="color: #0000cc">payment-agreement
+                            使用手册</a></td>
+                    </tr>
+                    <tr>
+                        <th>payment-router</th>
+                        <td>支付平台智能路由子系统，为支付提供渠道路由的能力，
+                            更多使用案例见：<a href="welcome.html" target="_blank" style="color: #0000cc">payment-router
+                            使用手册</a></td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </article>
+    <footer class="footer Hui-admin-footer">
+        <p>Copyright &copy;2019 simplej-tool 1.0v All Rights Reserved.</p>
+    </footer>
+</div>
+<script type="text/javascript" src="lib/jquery/1.9.1/jquery.min.js"></script>
+<script type="text/javascript" src="lib/layer/3.1.1/layer.js"></script>
+<script type="text/javascript" src="lib/h-ui/js/H-ui.min.js"></script>
+
+<!--请在下方写此页面业务相关的脚本-->
+<script type="text/javascript" src="lib/business/js/main.js"></script>
+<script type="text/javascript">
+    $(function() {
+
+        var myDate = new Date;
+        var year = myDate.getFullYear(); //获取当前年
+        var mon = myDate.getMonth() + 1; //获取当前月
+        var date = myDate.getDate(); //获取当前日
+        // var h = myDate.getHours();//获取当前小时数(0-23)
+        // var m = myDate.getMinutes();//获取当前分钟数(0-59)
+        // var s = myDate.getSeconds();//获取当前秒
+        var week = myDate.getDay();
+        var weeks = ["星期日", "星期一", "星期二", "星期三", "星期四", "星期五", "星期六"];
+        console.log(year, mon, date, weeks[week])
+        $("#time").html(year + "年" + mon + "月" + date + "日" + weeks[week]);
+    });
+</script>
+</body>
+</html>

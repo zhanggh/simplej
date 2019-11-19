@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>simplej-tools</artifactId>
+        <groupId>com.haven.simplej</groupId>
+        <version>1.4</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.haven.simplej</groupId>
+    <artifactId>authen</artifactId>
+    <version>${parent.version}</version>
+    <name>authen</name>
+    <description>access security,login and access authority control</description>
+    <packaging>jar</packaging>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <java.version>1.8</java.version>
+        <!--<ap.job.main.class>com</ap.job.main.class>-->
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <!-- maven plugin -->
+        <maven.tomcat.backgroundProcessorDelay>5</maven.tomcat.backgroundProcessorDelay>
+        <maven.tomcat.contextReloadable>true</maven.tomcat.contextReloadable>
+        <maven.tomcat.path>/</maven.tomcat.path>
+        <dozer.version>5.5.1</dozer.version>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.haven.simplej</groupId>
+            <artifactId>simplej-db</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.haven.simplej</groupId>
+            <artifactId>simplej-base</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.haven.simplej</groupId>
+            <artifactId>simplej-web</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.jolbox</groupId>
+            <artifactId>bonecp</artifactId>
+            <optional>true</optional>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-dbcp2</artifactId>
+            <optional>true</optional>
+        </dependency>
+
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>jstl</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>net.sf.dozer</groupId>
+            <artifactId>dozer</artifactId>
+            <version>${dozer.version}</version>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <!--<plugins>-->
+            <!--<plugin>-->
+                <!--<groupId>org.springframework.boot</groupId>-->
+                <!--<artifactId>spring-boot-maven-plugin</artifactId>-->
+            <!--</plugin>-->
+        <!--</plugins>-->
+    </build>
+</project>

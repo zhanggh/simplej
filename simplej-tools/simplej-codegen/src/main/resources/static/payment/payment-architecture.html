@@ -1,0 +1,147 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <!--[if lt IE 9]>
+    <script type="text/javascript" src="/lib/html5shiv.js"></script>
+    <script type="text/javascript" src="/lib/respond.min.js"></script>
+    <![endif]-->
+    <link rel="stylesheet" type="text/css" href="/lib/h-ui/css/H-ui.min.css" />
+    <link rel="stylesheet" type="text/css" href="/lib/Hui-iconfont/1.0.9/iconfont.css" />
+    <link rel="stylesheet" type="text/css" href="/lib/business/css/style.css" />
+    <link href="/lib/lightbox2/2.8.1/css/lightbox.css" rel="stylesheet" type="text/css" />
+    <!--[if IE 6]>
+    <script type="text/javascript" src="/lib/DD_belatedPNG_0.0.8a-min.js" ></script>
+    <script>DD_belatedPNG.fix('*');</script>
+    <![endif]-->
+    <title>支付系统架构简介</title>
+</head>
+<body>
+<div class="wap-container">
+    <article class="Hui-admin-content clearfix">
+        <div class="row-24 clearfix" style="margin-left: -12px; margin-right: -12px;"></div>
+        <div class="panel">
+            <div class="panel-body">
+                <p class="f-20 text-success">支付系统架构简介
+                </p>
+
+                <p id="time"></p>
+                <p>作者：havenzhang</p>
+                <p class="f-20 text-success">支付系统架构图</p>
+                <div class="portfoliobox">
+                    <div class="picbox" style="text-align: center;">
+                        <a href="/images/payment-architecture.jpg" data-lightbox="gallery" data-title="书房"><img src="/images/payment-architecture.jpg"></a>
+                    </div>
+                </div>
+                <p class="f-20 text-success">支付系统服务说明</p>
+                <table class="table table-border table-bordered table-bg mt-20">
+                    <thead>
+                    <tr>
+                        <th scope="col">第三方支付平台服务</th>
+                        <th scope="col">功能</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <th width="20%">mch-gateway</th>
+                        <td>支付网关服务，提供TO B业务的支付相关服务，如:统一下单、绑卡、发短信、解绑、快捷支付、支付结果查询、
+                            退款、退款结果查询、代扣、代扣结果查询、代付、代付结果查询、实名验证、下载对账单等服务，
+                            更多使用案例见：<a href="welcome.html" target="_blank"  style="color: #0000cc">mch-gateway使用手册</a></td>
+                    </tr>
+                    <tr>
+                        <th>payment-business</th>
+                        <td>支付应用子系统，由于仅实现了一些较为简单标准的支付功能，故中间层只设计了一个统一的支付应用服务，
+                            在业务较为丰富复杂的场景下，支付应用中间层实际上是可以划分成多个不同领域的子服务系统，更多使用案例见：<a
+                                    href="welcome.html" target="_blank" style="color: #0000cc">payment-business使用手册</a></td>
+                    </tr>
+                    <tr>
+                        <th>payment-admin</th>
+                        <td>支付运营管理平台，提供常规的商户管理、产品管理、计费管理、交易管理、结算管理、协议管理、账户管理等基础功能，
+                            更多使用案例见：<a href="welcome.html" target="_blank" style="color: #0000cc">payment-admin 使用手册</a></td>
+                    </tr>
+                    <tr>
+                        <th>payment-userinfo</th>
+                        <td>支付平台商户&用户服务，提供基础的商户&用户入户查询修改等基础功能，
+                            更多使用案例见：<a href="welcome.html" target="_blank" style="color: #0000cc">payment-userinfo
+                                使用手册</a></td>
+                    </tr>
+                    <tr>
+                        <th>payment-accounting</th>
+                        <td>支付平台账户系统（包含账户&科目），更多使用案例见：<a href="welcome.html" target="_blank"
+                                                         style="color: #0000cc">payment-accounting使用手册</a></td>
+                    </tr>
+                    <tr>
+                        <th>payment-settlement</th>
+                        <td>支付平台结算管理服务，更多使用案例见：<a href="welcome.html" target="_blank"
+                                                  style="color: #0000cc">payment-settlement使用手册</a></td>
+                    </tr>
+                    <tr>
+                        <th>payment-engine</th>
+                        <td>支付平台核心引擎，上游来着payment-business，下游去payment-channel，
+                            更多使用案例见：<a href="welcome.html" target="_blank" style="color: #0000cc">payment-engine
+                                使用手册</a></td>
+                    </tr>
+                    <tr>
+                        <th>payment-risk</th>
+                        <td>支付平台风控系统，提供事前事中事后3个阶段的风险控制能力，
+                            更多使用案例见：<a href="welcome.html" target="_blank" style="color: #0000cc">payment-risk
+                                使用手册</a></td>
+                    </tr>
+                    <tr>
+                        <th>payment-channel</th>
+                        <td>支付平台统一渠道网关系统，负责对接外部渠道，包括银行，短信运营商，营销平台等，
+                            更多使用案例见：<a href="welcome.html" target="_blank" style="color: #0000cc">payment-risk
+                                使用手册</a></td>
+                    </tr>
+                    <tr>
+                        <th>payment-agreement</th>
+                        <td>支付平台商户&用户协议管理子系统，所有商户&用户相关的签约/绑卡协议信息都由该系统统一登记管理，
+                            更多使用案例见：<a href="welcome.html" target="_blank" style="color: #0000cc">payment-agreement
+                                使用手册</a></td>
+                    </tr>
+                    <tr>
+                        <th>payment-router</th>
+                        <td>支付平台智能路由子系统，为支付提供渠道路由的能力，
+                            更多使用案例见：<a href="welcome.html" target="_blank" style="color: #0000cc">payment-router
+                                使用手册</a></td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </article>
+    <footer class="footer Hui-admin-footer">
+        <p>Copyright &copy;2019 simplej-tool 1.0v All Rights Reserved.</p>
+    </footer>
+</div>
+<script type="text/javascript" src="/lib/jquery/1.9.1/jquery.min.js"></script>
+<script type="text/javascript" src="/lib/layer/3.1.1/layer.js"></script>
+<script type="text/javascript" src="/lib/h-ui/js/H-ui.min.js"></script>
+
+<!--请在下方写此页面业务相关的脚本-->
+<script type="text/javascript" src="/lib/business/js/main.js"></script>
+<!--请在下方写此页面业务相关的脚本-->
+<script type="text/javascript" src="/lib/lightbox2/2.8.1/js/lightbox.min.js"></script>
+
+<script type="text/javascript">
+    $(function() {
+        // $(".Hui-admin-portfolio-area li").Huihover();
+        var myDate = new Date;
+        var year = myDate.getFullYear(); //获取当前年
+        var mon = myDate.getMonth() + 1; //获取当前月
+        var date = myDate.getDate(); //获取当前日
+        // var h = myDate.getHours();//获取当前小时数(0-23)
+        // var m = myDate.getMinutes();//获取当前分钟数(0-59)
+        // var s = myDate.getSeconds();//获取当前秒
+        var week = myDate.getDay();
+        var weeks = ["星期日", "星期一", "星期二", "星期三", "星期四", "星期五", "星期六"];
+        console.log(year, mon, date, weeks[week])
+        $("#time").html(year + "年" + mon + "月" + date + "日" + weeks[week]);
+    });
+</script>
+</body>
+</html>

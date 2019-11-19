@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>simplej-rpc</artifactId>
+        <groupId>com.haven.simplej</groupId>
+        <version>1.4</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.haven.simplej</groupId>
+    <artifactId>rpc-center-api</artifactId>
+    <version>${parent.version}</version>
+    <name>rpc-center-api</name>
+    <packaging>jar</packaging>
+    <description>rpc-center-api，服务治理中心提供的基础功能api，如：服务上报，心跳上报，流量上报，序列号生成器等</description>
+
+
+    <dependencies>
+        <dependency>
+            <groupId>com.haven.simplej</groupId>
+            <artifactId>rpc-client</artifactId>
+        </dependency>
+    </dependencies>
+    
+</project>
