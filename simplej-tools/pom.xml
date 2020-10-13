@@ -62,7 +62,7 @@
         <dbcp2.version>2.5.0</dbcp2.version>
         <netty-all.version>4.1.33.Final</netty-all.version>
         <protostuff.version>1.6.0</protostuff.version>
-        <junit.version>4.12</junit.version>
+        <junit.version>4.13.1</junit.version>
         <apache-curator.version>2.13.0</apache-curator.version>
         <aspectj.version>1.9.2</aspectj.version>
         <jquery.version>3.1.1</jquery.version>
