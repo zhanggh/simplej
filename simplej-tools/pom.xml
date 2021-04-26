@@ -52,7 +52,7 @@
         <bouncycastle.version>1.56</bouncycastle.version>
         <bouncycastle.ext.version>1.56</bouncycastle.ext.version>
         <velocity.version>1.7</velocity.version>
-        <commons.io.version>2.6</commons.io.version>
+        <commons.io.version>2.7</commons.io.version>
         <opencsv.version>3.9</opencsv.version>
         <poi.version>4.0.0</poi.version>
         <sharding-sphere.version>3.1.0</sharding-sphere.version>
