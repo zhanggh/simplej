@@ -48,7 +48,7 @@
         <fastjson.version>1.2.54</fastjson.version>
         <vjkit.version>1.0.8</vjkit.version>
         <hibernate.jpa.version>1.0.0.Final</hibernate.jpa.version>
-        <httpclient.version>4.5.5</httpclient.version>
+        <httpclient.version>4.5.13</httpclient.version>
         <bouncycastle.version>1.56</bouncycastle.version>
         <bouncycastle.ext.version>1.56</bouncycastle.ext.version>
         <velocity.version>1.7</velocity.version>
