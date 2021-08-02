@@ -67,7 +67,7 @@
         <aspectj.version>1.9.2</aspectj.version>
         <jquery.version>3.1.1</jquery.version>
         <bootstrap.version>3.3.7</bootstrap.version>
-        <compress.version>1.18</compress.version>
+        <compress.version>1.21</compress.version>
         <fremarker.version>2.3.23</fremarker.version>
         <jquery-validate.version>1.19.0</jquery-validate.version>
         <jquery-form.version>4.2.2</jquery-form.version>
