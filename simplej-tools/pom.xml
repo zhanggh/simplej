@@ -50,7 +50,7 @@
         <hibernate.jpa.version>1.0.0.Final</hibernate.jpa.version>
         <httpclient.version>4.5.5</httpclient.version>
         <bouncycastle.version>1.56</bouncycastle.version>
-        <bouncycastle.ext.version>1.56</bouncycastle.ext.version>
+        <bouncycastle.ext.version>1.67</bouncycastle.ext.version>
         <velocity.version>1.7</velocity.version>
         <commons.io.version>2.6</commons.io.version>
         <opencsv.version>3.9</opencsv.version>
